@@ -1,5 +1,6 @@
 body {
   background-color: #f4f6f8;
+  font-family: Arial, sans-serif;
 }
 
 /* SIDEBAR */
@@ -46,4 +47,8 @@ body {
   background: white;
   padding: 20px;
   border-left: 1px solid #ddd;
+}
+
+hr {
+  margin: 15px 0;
 }

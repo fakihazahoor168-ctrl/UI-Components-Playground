@@ -1,4 +1,6 @@
-// Sidebar Items
+// ===== GET ELEMENTS =====
+
+// Sidebar items
 const btnItem = document.getElementById("btnItem");
 const cardItem = document.getElementById("cardItem");
 
@@ -6,51 +8,74 @@ const cardItem = document.getElementById("cardItem");
 const buttonComponent = document.getElementById("buttonComponent");
 const cardComponent = document.getElementById("cardComponent");
 
-// Button click (switch)
-btnItem.addEventListener("click", () => {
+// Button controls
+const btnTextInput = document.getElementById("btnTextInput");
+const btnColorInput = document.getElementById("btnColorInput");
+const btnSizeSelect = document.getElementById("btnSizeSelect");
+
+// Card controls
+const cardTitleInput = document.getElementById("cardTitleInput");
+const cardTextInput = document.getElementById("cardTextInput");
+const cardBtnTextInput = document.getElementById("cardBtnTextInput");
+const cardBtnColorInput = document.getElementById("cardBtnColorInput");
+
+// Preview elements
+const previewButton = document.querySelector("#buttonComponent button");
+const cardTitle = document.querySelector(".card-title");
+const cardText = document.querySelector(".card-text");
+const cardButton = document.querySelector(".card a");
+
+
+// ===== SWITCH COMPONENTS =====
+
+btnItem.onclick = () => {
   buttonComponent.classList.remove("d-none");
   cardComponent.classList.add("d-none");
+};
 
-  btnItem.classList.add("active");
-  cardItem.classList.remove("active");
-});
-
-// Card click (switch)
-cardItem.addEventListener("click", () => {
+cardItem.onclick = () => {
   cardComponent.classList.remove("d-none");
   buttonComponent.classList.add("d-none");
+};
 
-  cardItem.classList.add("active");
-  btnItem.classList.remove("active");
-});
 
-// ---- BUTTON CUSTOMIZATION ----
+// ===== BUTTON CONTROLS =====
 
-// Controls
-const btnTextInput = document.querySelector(".controls input[type='text']");
-const btnColorInput = document.querySelector(".controls input[type='color']");
-const btnSizeSelect = document.querySelector(".controls select");
+btnTextInput.oninput = () => {
+  previewButton.innerText = btnTextInput.value || "Button";
+};
 
-// Preview button
-const previewButton = document.querySelector("#buttonComponent .btn");
-
-// Change Text
-btnTextInput.addEventListener("input", () => {
-  previewButton.textContent = btnTextInput.value || "Button";
-});
-
-// Change Color
-btnColorInput.addEventListener("input", () => {
+btnColorInput.oninput = () => {
   previewButton.style.backgroundColor = btnColorInput.value;
-});
+};
 
-// Change Size
-btnSizeSelect.addEventListener("change", () => {
-  const size = btnSizeSelect.value;
-  previewButton.style.padding = size === "Small" ? "6px 12px" :
-                               size === "Medium" ? "12px 24px" :
-                               "18px 36px";
-  previewButton.style.fontSize = size === "Small" ? "14px" :
-                                 size === "Medium" ? "16px" :
-                                 "18px";
-});
+btnSizeSelect.onchange = () => {
+  if (btnSizeSelect.value === "Small") {
+    previewButton.style.padding = "6px 12px";
+  } else if (btnSizeSelect.value === "Medium") {
+    previewButton.style.padding = "12px 24px";
+  } else {
+    previewButton.style.padding = "18px 36px";
+  }
+};
+
+
+// ===== CARD CONTROLS =====
+
+cardTitleInput.oninput = () => {
+  cardTitle.innerText = cardTitleInput.value || "Card Title";
+};
+
+cardTextInput.oninput = () => {
+  cardText.innerText =
+    cardTextInput.value || "This is a card";
+};
+
+cardBtnTextInput.oninput = () => {
+  cardButton.innerText = cardBtnTextInput.value || "Action";
+};
+
+cardBtnColorInput.oninput = () => {
+  cardButton.style.backgroundColor = cardBtnColorInput.value;
+  cardButton.style.color = "white";
+};
