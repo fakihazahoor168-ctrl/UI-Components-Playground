@@ -19,10 +19,8 @@
     <div class="col-md-2 sidebar">
       <h5 class="mb-3">Components</h5>
       <ul class="list-group">
-        <li class="list-group-item active">Button</li>
-        <li class="list-group-item">Card</li>
-        <li class="list-group-item">Input</li>
-        <li class="list-group-item">Modal</li>
+        <li class="list-group-item active" id="btnItem">Button</li>
+        <li class="list-group-item" id="cardItem">Card</li>
       </ul>
     </div>
 
@@ -31,7 +29,25 @@
       <h5 class="mb-3">Preview</h5>
 
       <div class="preview-box">
-        <button class="btn btn-primary">Button</button>
+
+        <!-- BUTTON COMPONENT -->
+        <div id="buttonComponent" class="component">
+          <button class="btn btn-primary">Button</button>
+        </div>
+
+        <!-- CARD COMPONENT -->
+        <div id="cardComponent" class="component d-none">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Card Title</h5>
+              <p class="card-text">
+                This is a simple card component.
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Action</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 

@@ -34,6 +34,13 @@ body {
   justify-content: center;
 }
 
+/* COMPONENT */
+.component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* CONTROLS */
 .controls {
   background: white;
