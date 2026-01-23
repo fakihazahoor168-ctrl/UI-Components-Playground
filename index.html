@@ -17,12 +17,15 @@
     <div class="col-md-2 sidebar">
       <h5>Components</h5>
       <ul class="list-group">
-        <li class="list-group-item active" id="btnItem">Button</li>
-        <li class="list-group-item" id="cardItem">Card</li>
-      </ul>
+  <li class="list-group-item active" id="btnItem">Button</li>
+  <li class="list-group-item" id="cardItem">Card</li>
+  <li class="list-group-item" id="inputItem">Input</li>
+  <li class="list-group-item" id="alertItem">Alert</li>
+</ul>
+
     </div>
 
-    <!-- CENTER -->
+    <!-- Preview CENTER -->
     <div class="col-md-7 preview-area">
       <h5>Preview</h5>
 
@@ -44,31 +47,71 @@
           </div>
         </div>
 
+        <!-- INPUT COMPONENT -->
+<div id="inputComponent" class="d-none">
+  <input type="text" class="form-control w-75" placeholder="Enter text">
+</div>
+
+<!-- ALERT COMPONENT -->
+<div id="alertComponent" class="d-none">
+  <div class="alert alert-success">
+    This is a success alert
+  </div>
+</div>
+
       </div>
     </div>
+<!-- RIGHT PANEL -->
+<div class="col-md-3 controls">
 
-    <!-- RIGHT -->
-    <div class="col-md-3 controls">
-      <h5>Controls</h5>
+  <h5>Controls</h5>
 
-      <!-- BUTTON CONTROLS -->
-      <input id="btnTextInput" class="form-control mb-2" placeholder="Button Text">
-      <input id="btnColorInput" type="color" class="form-control mb-2">
-      <select id="btnSizeSelect" class="form-select mb-3">
-        <option>Small</option>
-        <option selected>Medium</option>
-        <option>Large</option>
-      </select>
+  <!-- BUTTON CONTROLS -->
+  <div id="buttonControls">
+    <input id="btnTextInput" class="form-control mb-2" placeholder="Button Text">
+    <input id="btnColorInput" type="color" class="form-control mb-2">
+    <select id="btnSizeSelect" class="form-select mb-2">
+      <option>Small</option>
+      <option selected>Medium</option>
+      <option>Large</option>
+    </select>
+    <input id="btnRadius" type="number" class="form-control mb-2" placeholder="Border Radius (px)">
+    <input id="btnPadding" type="number" class="form-control mb-2" placeholder="Padding (px)">
+  </div>
 
-      <hr>
+  <!-- CARD CONTROLS -->
+  <div id="cardControls" class="d-none">
+    <input id="cardTitleInput" class="form-control mb-2" placeholder="Card Title">
+    <input id="cardTextInput" class="form-control mb-2" placeholder="Card Text">
+    <input id="cardBtnTextInput" class="form-control mb-2" placeholder="Button Text">
+    <input id="cardBtnColorInput" type="color" class="form-control mb-2">
+    <input id="cardRadius" type="number" class="form-control mb-2" placeholder="Card Border Radius (px)">
+    <input id="cardBorderColor" type="color" class="form-control mb-2" placeholder="Card Border Color">
+  </div>
 
-      <!-- CARD CONTROLS -->
-      <input id="cardTitleInput" class="form-control mb-2" placeholder="Card Title">
-      <input id="cardTextInput" class="form-control mb-2" placeholder="Card Text">
-      <input id="cardBtnTextInput" class="form-control mb-2" placeholder="Card Button Text">
-      <input id="cardBtnColorInput" type="color" class="form-control mb-2">
+  <!-- INPUT CONTROLS -->
+  <div id="inputControls" class="d-none">
+    <input id="inputPlaceholder" class="form-control mb-2" placeholder="Input Placeholder">
+    <select id="inputSize" class="form-select mb-2">
+      <option>Small</option>
+      <option selected>Medium</option>
+      <option>Large</option>
+    </select>
+  </div>
 
-    </div>
+  <!-- ALERT CONTROLS -->
+  <div id="alertControls" class="d-none">
+    <input id="alertText" class="form-control mb-2" placeholder="Alert Text">
+    <select id="alertType" class="form-select mb-2">
+      <option value="success">Success</option>
+      <option value="danger">Error</option>
+      <option value="warning">Warning</option>
+      <option value="info">Info</option>
+    </select>
+  </div>
+
+</div>
+
 
   </div>
 </div>
