@@ -1,31 +1,30 @@
 body {
-  background: #f4f6f8;
+  background-color: #f4f6f8;
   font-family: Arial, sans-serif;
 }
 
+/* SIDEBAR */
 .sidebar {
-  background: #111827;
+  background-color: #111827;
   color: white;
   padding: 20px;
 }
-
 .sidebar .list-group-item {
   background: transparent;
   color: white;
   border: none;
   cursor: pointer;
 }
-
 .sidebar .list-group-item.active {
-  background: #374151;
+  background-color: #374151;
 }
 
+/* PREVIEW */
 .preview-area {
   padding: 30px;
 }
-
 .preview-box {
-  height: 320px;
+  height: 300px;
   background: white;
   border-radius: 12px;
   display: flex;
@@ -33,6 +32,7 @@ body {
   justify-content: center;
 }
 
+/* CONTROLS */
 .controls {
   background: white;
   padding: 20px;

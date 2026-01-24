@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>UI Component Playground</title>
-
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +12,7 @@
 <div class="container-fluid vh-100">
   <div class="row h-100">
 
-    <!-- SIDEBAR -->
+    <!-- LEFT: Sidebar -->
     <div class="col-md-2 sidebar">
       <h5>Components</h5>
       <ul class="list-group">
@@ -23,17 +23,19 @@
       </ul>
     </div>
 
-    <!-- PREVIEW -->
+    <!-- CENTER: Preview -->
     <div class="col-md-7 preview-area">
       <h5>Preview</h5>
       <div class="preview-box">
 
+        <!-- BUTTON -->
         <div id="buttonComponent">
           <button class="btn btn-primary">Button</button>
         </div>
 
+        <!-- CARD -->
         <div id="cardComponent" class="d-none">
-          <div class="card">
+          <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Card Title</h5>
               <p class="card-text">This is a card</p>
@@ -42,10 +44,12 @@
           </div>
         </div>
 
+        <!-- INPUT -->
         <div id="inputComponent" class="d-none">
-          <input type="text" class="form-control" placeholder="Enter text">
+          <input type="text" class="form-control w-75" placeholder="Enter text">
         </div>
 
+        <!-- ALERT -->
         <div id="alertComponent" class="d-none">
           <div class="alert alert-success">This is a success alert</div>
         </div>
@@ -53,60 +57,76 @@
       </div>
     </div>
 
-    <!-- CONTROLS -->
+    <!-- RIGHT: Controls -->
     <div class="col-md-3 controls">
       <h5>Controls</h5>
 
-      <!-- COMMON CONTROLS -->
-      <div class="mb-3">
-        <label class="form-label">Margin (px)</label>
-        <input id="marginControl" type="number" class="form-control">
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Width (px)</label>
-        <input id="widthControl" type="number" class="form-control" placeholder="auto">
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Shadow</label>
-        <select id="shadowControl" class="form-select">
-          <option value="none">None</option>
-          <option value="sm">Small</option>
-          <option value="md">Medium</option>
-          <option value="lg">Large</option>
-        </select>
-      </div>
-
-      <hr>
-
-      <!-- BUTTON -->
+      <!-- BUTTON CONTROLS -->
       <div id="buttonControls">
         <input id="btnTextInput" class="form-control mb-2" placeholder="Button Text">
         <input id="btnColorInput" type="color" class="form-control mb-2">
-        <input id="btnRadius" type="number" class="form-control mb-2" placeholder="Border Radius">
+        <select id="btnSizeSelect" class="form-select mb-2">
+          <option>Small</option>
+          <option selected>Medium</option>
+          <option>Large</option>
+        </select>
+        <input id="btnRadius" type="number" class="form-control mb-2" placeholder="Border Radius (px)">
+        <input id="btnPadding" type="number" class="form-control mb-2" placeholder="Padding (px)">
+        <input id="btnMargin" type="number" class="form-control mb-2" placeholder="Margin (px)">
+        <input id="btnWidth" type="text" class="form-control mb-2" placeholder="Width (px or %)">
+        <select id="btnShadow" class="form-select mb-2">
+          <option value="none">Shadow None</option>
+          <option value="shadow-sm">Shadow Small</option>
+          <option value="shadow">Shadow Normal</option>
+          <option value="shadow-lg">Shadow Large</option>
+        </select>
+        <button id="saveBtnPreset" class="btn btn-success btn-sm w-100 mb-2">💾 Save Preset</button>
+        <button id="loadBtnPreset" class="btn btn-primary btn-sm w-100">📂 Load Preset</button>
       </div>
 
-      <!-- CARD -->
+      <!-- CARD CONTROLS -->
       <div id="cardControls" class="d-none">
         <input id="cardTitleInput" class="form-control mb-2" placeholder="Card Title">
         <input id="cardTextInput" class="form-control mb-2" placeholder="Card Text">
+        <input id="cardBtnTextInput" class="form-control mb-2" placeholder="Button Text">
+        <input id="cardBtnColorInput" type="color" class="form-control mb-2">
+        <input id="cardRadius" type="number" class="form-control mb-2" placeholder="Card Border Radius (px)">
+        <input id="cardBorderColor" type="color" class="form-control mb-2" placeholder="Card Border Color">
+        <input id="cardMargin" type="number" class="form-control mb-2" placeholder="Card Margin (px)">
+        <input id="cardWidth" type="text" class="form-control mb-2" placeholder="Card Width (px or %)">
+        <select id="cardShadow" class="form-select mb-2">
+          <option value="none">Shadow None</option>
+          <option value="shadow-sm">Shadow Small</option>
+          <option value="shadow">Shadow Normal</option>
+          <option value="shadow-lg">Shadow Large</option>
+        </select>
+        <button id="saveCardPreset" class="btn btn-success btn-sm w-100 mb-2">💾 Save Preset</button>
+        <button id="loadCardPreset" class="btn btn-primary btn-sm w-100">📂 Load Preset</button>
       </div>
 
-      <!-- INPUT -->
+      <!-- INPUT CONTROLS -->
       <div id="inputControls" class="d-none">
-        <input id="inputPlaceholder" class="form-control mb-2" placeholder="Placeholder">
+        <input id="inputPlaceholder" class="form-control mb-2" placeholder="Input Placeholder">
+        <select id="inputSize" class="form-select mb-2">
+          <option>Small</option>
+          <option selected>Medium</option>
+          <option>Large</option>
+        </select>
+        <button id="saveInputPreset" class="btn btn-success btn-sm w-100 mb-2">💾 Save Preset</button>
+        <button id="loadInputPreset" class="btn btn-primary btn-sm w-100">📂 Load Preset</button>
       </div>
 
-      <!-- ALERT -->
+      <!-- ALERT CONTROLS -->
       <div id="alertControls" class="d-none">
         <input id="alertText" class="form-control mb-2" placeholder="Alert Text">
-        <select id="alertType" class="form-select">
+        <select id="alertType" class="form-select mb-2">
           <option value="success">Success</option>
           <option value="danger">Error</option>
           <option value="warning">Warning</option>
           <option value="info">Info</option>
         </select>
+        <button id="saveAlertPreset" class="btn btn-success btn-sm w-100 mb-2">💾 Save Preset</button>
+        <button id="loadAlertPreset" class="btn btn-primary btn-sm w-100">📂 Load Preset</button>
       </div>
 
     </div>
