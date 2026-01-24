@@ -1,11 +1,10 @@
 body {
-  background-color: #f4f6f8;
+  background: #f4f6f8;
   font-family: Arial, sans-serif;
 }
 
-/* SIDEBAR */
 .sidebar {
-  background-color: #111827;
+  background: #111827;
   color: white;
   padding: 20px;
 }
@@ -18,16 +17,15 @@ body {
 }
 
 .sidebar .list-group-item.active {
-  background-color: #374151;
+  background: #374151;
 }
 
-/* PREVIEW */
 .preview-area {
   padding: 30px;
 }
 
 .preview-box {
-  height: 300px;
+  height: 320px;
   background: white;
   border-radius: 12px;
   display: flex;
@@ -35,20 +33,8 @@ body {
   justify-content: center;
 }
 
-/* COMPONENT */
-.component {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* CONTROLS */
 .controls {
   background: white;
   padding: 20px;
   border-left: 1px solid #ddd;
-}
-
-hr {
-  margin: 15px 0;
 }
