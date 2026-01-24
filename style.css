@@ -9,12 +9,14 @@ body {
   color: white;
   padding: 20px;
 }
+
 .sidebar .list-group-item {
   background: transparent;
   color: white;
   border: none;
   cursor: pointer;
 }
+
 .sidebar .list-group-item.active {
   background-color: #374151;
 }
@@ -23,6 +25,7 @@ body {
 .preview-area {
   padding: 30px;
 }
+
 .preview-box {
   height: 300px;
   background: white;
@@ -30,6 +33,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: auto;
 }
 
 /* CONTROLS */
