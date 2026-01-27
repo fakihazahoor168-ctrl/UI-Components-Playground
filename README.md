@@ -30,8 +30,3 @@ A web-based drag-and-drop UI component builder that allows users to quickly crea
 
 ---
 
-## **Getting Started**
-
-1. **Clone the repository:**  
-   ```bash
-   git clone https://github.com/your-username/fakiha-ui-builder.git
