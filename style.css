@@ -1,44 +1,80 @@
 body {
-  background-color: #f4f6f8;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #0f172a;
+  font-family: 'Segoe UI', sans-serif;
+  color: #e5e7eb;
 }
 
-/* SIDEBAR */
-.sidebar {
-  background-color: #111827;
-  color: white;
-  padding: 20px;
-}
-
-.sidebar .list-group-item {
-  background: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.sidebar .list-group-item.active {
-  background-color: #374151;
-}
-
-/* PREVIEW */
-.preview-area {
-  padding: 30px;
-}
-
-.preview-box {
-  height: 300px;
-  background: white;
-  border-radius: 12px;
+.top-bar {
+  height: 55px;
+  background: #020617;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: auto;
+  padding: 0 20px;
+  border-bottom: 1px solid #1e293b;
 }
 
-/* CONTROLS */
+.app-container {
+  display: flex;
+  height: calc(100vh - 55px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #020617;
+  padding: 15px;
+  border-right: 1px solid #1e293b;
+}
+
+.sidebar h6 {
+  margin-bottom: 10px;
+  color: #94a3b8;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background: #1d4ed8;
+}
+
+/* Canvas */
+.canvas {
+  flex: 1;
+  background: repeating-linear-gradient(
+    45deg,
+    #0f172a,
+    #0f172a 10px,
+    #020617 10px,
+    #020617 20px
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview {
+  background: #020617;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+/* Controls */
 .controls {
-  background: white;
-  padding: 20px;
-  border-left: 1px solid #ddd;
+  width: 260px;
+  background: #020617;
+  padding: 15px;
+  border-left: 1px solid #1e293b;
 }

@@ -2,126 +2,160 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>UI Component Playground</title>
+  <title>Fakiha UI Builder</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container-fluid vh-100">
-  <div class="row h-100">
+<header class="top-bar">
+  <h4><i class="fa-solid fa-layer-group"></i> Fakiha UI Builder</h4>
+</header>
 
-    <!-- LEFT SIDEBAR -->
-    <div class="col-md-2 sidebar">
-      <h5>Components</h5>
-      <ul class="list-group">
-        <li class="list-group-item active" id="btnItem">Button</li>
-        <li class="list-group-item" id="cardItem">Card</li>
-        <li class="list-group-item" id="inputItem">Input</li>
-        <li class="list-group-item" id="alertItem">Alert</li>
-      </ul>
+<div class="app-container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h6>Components</h6>
+    <ul>
+      <li class="active" data-comp="button"><i class="fa fa-square"></i> Button</li>
+      <li data-comp="card"><i class="fa fa-id-card"></i> Card</li>
+      <li data-comp="input"><i class="fa fa-keyboard"></i> Input</li>
+      <li data-comp="alert"><i class="fa fa-bell"></i> Alert</li>
+      <li data-comp="navbar"><i class="fa fa-bars"></i> Navbar</li>
+      <li data-comp="modal"><i class="fa fa-window-maximize"></i> Modal</li>
+      <li data-comp="badge"><i class="fa fa-certificate"></i> Badge</li>
+      <li data-comp="progress"><i class="fa fa-chart-simple"></i> Progress</li>
+      <li data-comp="loader"><i class="fa fa-spinner"></i> Loader</li>
+    </ul>
+  </aside>
+
+  <!-- CANVAS -->
+  <main class="canvas">
+    <div class="preview" id="previewArea">
+      <button class="btn btn-primary draggable" draggable="true">Button</button>
+    </div>
+  </main>
+
+  <!-- CONTROLS -->
+  <section class="controls">
+
+    <!-- BUTTON CONTROLS -->
+    <div id="buttonControls" class="control-panel">
+      <h6>Button Controls</h6>
+      <input type="text" id="btnTextInput" class="form-control mb-2" placeholder="Button Text">
+      <input type="color" id="btnColorInput" class="form-control mb-2">
+      <input type="number" id="btnRadius" class="form-control mb-2" placeholder="Border Radius">
+      <input type="text" id="btnShadow" class="form-control mb-2" placeholder="Box Shadow">
     </div>
 
-    <!-- CENTER PREVIEW -->
-    <div class="col-md-7 preview-area">
-      <h5>Preview</h5>
-      <div class="preview-box">
-
-        <!-- BUTTON -->
-        <div id="buttonComponent">
-          <button class="btn btn-primary">Button</button>
-        </div>
-
-        <!-- CARD -->
-        <div id="cardComponent" class="d-none">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Card Title</h5>
-              <p class="card-text">This is a card</p>
-              <a href="#" class="btn btn-primary btn-sm">Action</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- INPUT -->
-        <div id="inputComponent" class="d-none">
-          <input type="text" class="form-control w-75" placeholder="Enter text">
-        </div>
-
-        <!-- ALERT -->
-        <div id="alertComponent" class="d-none">
-          <div class="alert alert-success">This is a success alert</div>
-        </div>
-
-      </div>
+    <!-- CARD CONTROLS -->
+    <div id="cardControls" class="control-panel d-none">
+      <h6>Card Controls</h6>
+      <input type="text" id="cardTitleInput" class="form-control mb-2" placeholder="Card Title">
+      <input type="text" id="cardTextInput" class="form-control mb-2" placeholder="Card Text">
+      <input type="text" id="cardBtnTextInput" class="form-control mb-2" placeholder="Button Text">
+      <input type="color" id="cardBtnColorInput" class="form-control mb-2">
+      <input type="number" id="cardRadius" class="form-control mb-2" placeholder="Card Border Radius">
+      <input type="text" id="cardShadow" class="form-control mb-2" placeholder="Box Shadow">
     </div>
 
-    <!-- RIGHT CONTROLS -->
-    <div class="col-md-3 controls">
-      <h5>Controls</h5>
-
-      <!-- BUTTON CONTROLS -->
-      <div id="buttonControls">
-        <input id="btnTextInput" class="form-control mb-2" placeholder="Button Text">
-        <input id="btnColorInput" type="color" class="form-control mb-2">
-        <select id="btnSizeSelect" class="form-select mb-2">
-          <option>Small</option>
-          <option selected>Medium</option>
-          <option>Large</option>
-        </select>
-        <input id="btnRadius" type="number" class="form-control mb-2" placeholder="Border Radius (px)">
-        <input id="btnPadding" type="number" class="form-control mb-2" placeholder="Padding (px)">
-        <input id="btnMargin" type="number" class="form-control mb-2" placeholder="Margin (px)">
-        <input id="btnShadow" type="text" class="form-control mb-2" placeholder="Box Shadow (e.g., 2px 2px 5px gray)">
-        <input id="btnBorderWidth" type="number" class="form-control mb-2" placeholder="Border Width (px)">
-        <input id="btnBorderColor" type="color" class="form-control mb-2" placeholder="Border Color">
-      </div>
-
-      <!-- CARD CONTROLS -->
-      <div id="cardControls" class="d-none">
-        <input id="cardTitleInput" class="form-control mb-2" placeholder="Card Title">
-        <input id="cardTextInput" class="form-control mb-2" placeholder="Card Text">
-        <input id="cardBtnTextInput" class="form-control mb-2" placeholder="Button Text">
-        <input id="cardBtnColorInput" type="color" class="form-control mb-2">
-        <input id="cardRadius" type="number" class="form-control mb-2" placeholder="Card Border Radius (px)">
-        <input id="cardBorderWidth" type="number" class="form-control mb-2" placeholder="Card Border Width (px)">
-        <input id="cardBorderColor" type="color" class="form-control mb-2" placeholder="Card Border Color">
-        <input id="cardMargin" type="number" class="form-control mb-2" placeholder="Margin (px)">
-        <input id="cardShadow" type="text" class="form-control mb-2" placeholder="Box Shadow">
-      </div>
-
-      <!-- INPUT CONTROLS -->
-      <div id="inputControls" class="d-none">
-        <input id="inputPlaceholder" class="form-control mb-2" placeholder="Input Placeholder">
-        <select id="inputSize" class="form-select mb-2">
-          <option>Small</option>
-          <option selected>Medium</option>
-          <option>Large</option>
-        </select>
-      </div>
-
-      <!-- ALERT CONTROLS -->
-      <div id="alertControls" class="d-none">
-        <input id="alertText" class="form-control mb-2" placeholder="Alert Text">
-        <select id="alertType" class="form-select mb-2">
-          <option value="success">Success</option>
-          <option value="danger">Error</option>
-          <option value="warning">Warning</option>
-          <option value="info">Info</option>
-        </select>
-      </div>
-
-      <hr>
-      <button id="savePreset" class="btn btn-outline-success mb-2 w-100">Save Preset</button>
-      <button id="loadPreset" class="btn btn-outline-primary mb-2 w-100">Load Preset</button>
-      <button id="copyCode" class="btn btn-outline-dark mb-2 w-100">Copy Generated Code</button>
-      <textarea id="generatedCode" class="form-control" rows="8" placeholder="Generated code will appear here..." readonly></textarea>
-
-    </div>
-
-  </div>
+    <!-- INPUT CONTROLS -->
+   <div id="inputControls" class="control-panel d-none">
+  <h6>Input Controls</h6>
+  <input type="text" id="inputPlaceholder" class="form-control mb-2" placeholder="Placeholder Text">
+  <input type="color" id="inputColor" class="form-control mb-2">
+  <input type="number" id="inputRadius" class="form-control mb-2" placeholder="Border Radius">
 </div>
 
+    <!-- ALERT CONTROLS -->
+    <div id="alertControls" class="control-panel d-none">
+      <h6>Alert Controls</h6>
+      <input type="text" id="alertText" class="form-control mb-2" placeholder="Alert Text">
+      <select id="alertType" class="form-select mb-2">
+        <option value="success">Success</option>
+        <option value="danger">Danger</option>
+        <option value="warning">Warning</option>
+        <option value="info">Info</option>
+      </select>
+    </div>
+
+    <!-- BADGE CONTROLS -->
+    <div id="badgeControls" class="control-panel d-none">
+      <h6>Badge Controls</h6>
+      <input type="text" id="badgeText" class="form-control mb-2" placeholder="Badge Text">
+      <input type="color" id="badgeColor" class="form-control mb-2">
+    </div>
+
+    <!-- PROGRESS CONTROLS -->
+    <div id="progressControls" class="control-panel d-none">
+      <h6>Progress Controls</h6>
+      <input type="number" id="progressValue" class="form-control mb-2" placeholder="Progress %">
+      <input type="color" id="progressColor" class="form-control mb-2">
+    </div>
+
+    <!-- LOADER CONTROLS -->
+    <div id="loaderControls" class="control-panel d-none">
+      <h6>Loader Controls</h6>
+      <select id="loaderRole" class="form-select mb-2">
+        <option value="border">Spinner Border</option>
+        <option value="grow">Spinner Grow</option>
+      </select>
+      <input type="color" id="loaderColor" class="form-control mb-2">
+      <input type="number" id="loaderSize" class="form-control mb-2" placeholder="Size (px)">
+    </div>
+
+    <!-- NAVBAR CONTROLS -->
+    <div id="navbarControls" class="control-panel d-none">
+      <h5>Navbar Controls</h5>
+      <div class="control-section mb-3">
+        <h6>Brand / Logo</h6>
+        <input type="text" id="navbarBrandText" class="form-control mb-2" placeholder="Brand Text">
+        <input type="color" id="navbarBrandColor" class="form-control mb-2">
+        <input type="number" id="navbarBrandSize" class="form-control mb-2" placeholder="Font Size (px)">
+      </div>
+      <div class="control-section mb-3">
+        <h6>Menu Items</h6>
+        <div id="navbarMenuList" class="mb-2"></div>
+        <button id="addMenuItem" class="btn btn-outline-light btn-sm w-100 mb-2">+ Add Menu Item</button>
+        <input type="color" id="navbarMenuColor" class="form-control mb-2">
+        <input type="number" id="navbarMenuFontSize" class="form-control mb-2" placeholder="Menu Font Size">
+      </div>
+      <div class="control-section mb-3">
+        <h6>Navbar Properties</h6>
+        <input type="color" id="navbarBgColor" class="form-control mb-2">
+        <input type="number" id="navbarHeight" class="form-control mb-2" placeholder="Height">
+        <input type="text" id="navbarPadding" class="form-control mb-2" placeholder="Padding">
+        <input type="text" id="navbarShadow" class="form-control mb-2" placeholder="Box Shadow">
+        <div class="form-check mt-1">
+          <input class="form-check-input" type="checkbox" id="navbarFixedTop">
+          <label class="form-check-label">Fixed Top</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL CONTROLS -->
+    <div id="modalControls" class="control-panel d-none">
+      <h6>Modal Controls</h6>
+      <input type="text" id="modalTitle" class="form-control mb-2" placeholder="Modal Title">
+      <input type="text" id="modalBody" class="form-control mb-2" placeholder="Modal Body">
+      <input type="text" id="modalOpenBtnText" class="form-control mb-2" placeholder="Open Button Text">
+      <input type="text" id="modalCloseBtnText" class="form-control mb-2" placeholder="Close Button Text">
+      <input type="number" id="modalRadius" class="form-control mb-2" placeholder="Border Radius">
+      <input type="color" id="modalHeaderColor" class="form-control mb-2">
+      <input type="color" id="modalBodyColor" class="form-control mb-2">
+    </div>
+
+    <!-- COPY CODE -->
+    <button id="copyCode" class="btn btn-outline-light w-100 mt-2">Copy HTML</button>
+    <textarea id="codeBox" class="form-control mt-2" rows="6" readonly></textarea>
+
+  </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
